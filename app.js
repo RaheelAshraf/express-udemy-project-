@@ -1,5 +1,5 @@
 const path = require('path');
-
+const port = 3000;
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -21,4 +21,6 @@ app.use((req, res, next) => {
   res.status(404).render('404', { pageTitle: 'Page Not Found' });
 });
 
-app.listen(3000);
+app.listen(port, () => {
+  console.log(`app started on port: ${port}`);
+});
